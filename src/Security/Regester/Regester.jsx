@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 const Regester = () => {
     const { createuser, Updateprofil, googlesignin } = useContext(MyAuthcontext)
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const location = useLocation();
     const Navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
@@ -25,15 +25,39 @@ const Regester = () => {
         if (Password == conformpass) {
             createuser(email, Password)
                 .then(data => {
+
+
                     Updateprofil(name, photo)
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Sign in success Full',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    Navigate(from, { replace: true })
+
+                        .then(() => {
+                            const savedata = { name: name, email: email, img: data.photoURL }
+                            fetch("http://localhost:5000/users", {
+                                method: 'POST',
+                                headers: {
+                                    'content-type': 'application/json'
+                                },
+                                body: JSON.stringify(savedata)
+                            })
+                                .then(res => res.json())
+                                .then(data => {
+                                    if (data.insertedId) {
+                                        reset()
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'success',
+                                            title: 'Sign in success Full',
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                        })
+                                        Navigate(from, { replace: true })
+
+                                    }
+                                })
+
+
+
+                        })
+
                 })
                 .catch(error => {
                     Swal.fire(error.message, ' ', 'error')
@@ -54,14 +78,30 @@ const Regester = () => {
     const handlergooglelogin = () => {
         googlesignin()
             .then(data => {
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Sign in success Full',
-                    showConfirmButton: false,
-                    timer: 1500
+                const savedata = { name: data.user?.displayName, email: data.user?.email, img:data.user?.photoURL }
+                console.log(data.user                    );
+                fetch("http://localhost:5000/users", {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(savedata)
                 })
-                Navigate(from, { replace: true })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            reset()
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Sign in success Full',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            Navigate(from, { replace: true })
+
+                        }
+                    })
             })
             .catch(error => {
                 Swal.fire(error.message, ' ', 'error')
@@ -108,7 +148,7 @@ const Regester = () => {
                     {errors.conformpass?.type === "pattern" && <span className='text-red-500'>This Password Min 1 uppercase letter <br />,Min 1 lowercase letter caracter</span>}
                     {errors.conformpass?.type === "pattern" && <span className='text-red-500'>At least one special character</span>}
 
-                    
+
 
                     <br />
 

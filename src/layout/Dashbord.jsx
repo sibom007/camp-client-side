@@ -5,7 +5,7 @@ import usecart from '../hooks/Usecart/usecart';
 
 const Dashbord = () => {
     const [cart] = usecart()
-    const isAdmin = false
+    const isAdmin = true
     return (
         <div>
             <div className="drawer lg:drawer-open ">
@@ -27,7 +27,7 @@ const Dashbord = () => {
                                 <li><NavLink to={'/dashbord/Additem'}><FaUtensils />  add items</NavLink></li>
                                 <li><NavLink to={'/dashbord/manageitems'}><FaWallet />manage items</NavLink></li>
                                 <li><NavLink to={'/dashbord/managebookings'}><FaBookmark /> Manage bookings  <div className="badge bg-zinc-200 text-black">+{cart?.length || 0}</div></NavLink></li>
-                                <li><NavLink to={'/dashbord/Alluser'}> <FaUser /> all users</NavLink></li>
+                                <li><NavLink to={'/dashbord/alldata'}> <FaUser /> All Users</NavLink></li>
 
                             </>
                                 :

@@ -7,6 +7,7 @@ import Home from "../Page/Home/Home/Home";
 import Classdataloade from "../Page/Classpage/Classdataloade";
 import Cart from "../Page/Dashbord/Cart/Cart";
 import Dashbord from "../layout/Dashbord";
+import Alluser from "../Page/Dashbord/Alluser/Alluser";
 
 
 
@@ -39,11 +40,15 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashbord',
-        element:<Dashbord />,
+        element: <Dashbord />,
         children: [
             {
                 path: 'cart',
                 element: <Cart />
+            },
+            {
+                path: 'alldata',
+                element: <Alluser />
             }
         ]
     }

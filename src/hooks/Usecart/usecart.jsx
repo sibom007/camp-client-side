@@ -5,6 +5,7 @@ import { MyAuthcontext } from '../../Provider/Authprovider';
 
 const usecart = () => {
     const { user, loading } = useContext(MyAuthcontext);
+    const token =localStorage.getItem('accessss-token')
    
    
     const { refetch, data: cart = [] } = useQuery({
@@ -12,7 +13,11 @@ const usecart = () => {
         enabled: !loading && !!user?.email,
         
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/Enroll?email=${user?.email}`)
+            const res = await fetch(`http://localhost:5000/Enroll?email=${user?.email}`,{
+                headers:{
+                    aauthorization:`bearer ${token}`
+                }
+            })
             
             return res.json()
         },
