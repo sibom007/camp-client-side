@@ -17,11 +17,43 @@ const Regester = () => {
 
         const email = data.email
         const Password = data.password
+        const conformpass = data.conformpass
         const photo = data.photourl
         const name = data.name
-        createuser(email, Password)
+        console.log(conformpass);
+
+        if (Password == conformpass) {
+            createuser(email, Password)
+                .then(data => {
+                    Updateprofil(name, photo)
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Sign in success Full',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    Navigate(from, { replace: true })
+                })
+                .catch(error => {
+                    Swal.fire(error.message, ' ', 'error')
+                })
+        }
+        else {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Password is not mach',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+    }
+
+
+    const handlergooglelogin = () => {
+        googlesignin()
             .then(data => {
-                Updateprofil(name, photo)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -34,23 +66,6 @@ const Regester = () => {
             .catch(error => {
                 Swal.fire(error.message, ' ', 'error')
             })
-    };
-
-    const handlergooglelogin = () => {
-        googlesignin()
-        .then(data =>{
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Sign in success Full',
-                showConfirmButton: false,
-                timer: 1500
-            })
-            Navigate(from, { replace: true })
-        })
-        .catch(error => {
-            Swal.fire(error.message, ' ', 'error')
-        })
     }
 
 
@@ -73,12 +88,27 @@ const Regester = () => {
                     <input className='w-96 p-2 border-2 rounded  mt-3' placeholder='Email' {...register("email", { required: true })} />
 
                     <input className='w-96 p-2 border-2 rounded mt-3 mb-3' placeholder='Password' {...register("password", { required: true, minLength: 6, maxLength: 20, pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[#?!@$%^&*-])/ })} />
+
+                    <input className='w-96 p-2 border-2 rounded mt-3 mb-3' placeholder='conformpass' {...register("conformpass", { required: true, minLength: 6, maxLength: 20, pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[#?!@$%^&*-])/ })} />
+
                     <br />
+
+                    {/* Password error */}
                     {errors.password?.type === "required" && <span className='text-red-500'>This Password is required</span>}
                     {errors.password?.type === "minLength" && <span className='text-red-500'>This Password Should be 6 caracter</span>}
                     {errors.password?.type === "maxLength" && <span className='text-red-500'>This Password only 20  caracter</span>}
                     {errors.password?.type === "pattern" && <span className='text-red-500'>This Password Min 1 uppercase letter <br />,Min 1 lowercase letter caracter</span>}
                     {errors.password?.type === "pattern" && <span className='text-red-500'>At least one special character</span>}
+
+                    {/* Conform password error */}
+
+                    {errors.conformpass?.type === "required" && <span className='text-red-500'>This Password is required</span>}
+                    {errors.conformpass?.type === "minLength" && <span className='text-red-500'>This Password Should be 6 caracter</span>}
+                    {errors.conformpass?.type === "maxLength" && <span className='text-red-500'>This Password only 20  caracter</span>}
+                    {errors.conformpass?.type === "pattern" && <span className='text-red-500'>This Password Min 1 uppercase letter <br />,Min 1 lowercase letter caracter</span>}
+                    {errors.conformpass?.type === "pattern" && <span className='text-red-500'>At least one special character</span>}
+
+                    
 
                     <br />
 

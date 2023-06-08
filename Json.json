@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Soccer",
+        "instructor": "John Smith",
+        "availableSeats": 10,
+          "Enroll":0,
+        "price": 50,
+        "img": "https://img.freepik.com/free-photo/full-shot-kids-playing-football-together_23-2149270950.jpg?w=1380&t=st=1686194630~exp=1686195230~hmac=a74b5e7a1726f528b1e0b0049de8353b475e8a069c7723e28c116ebe2676ab1f"
+    },
+    {
+        "name": "Basketball",
+        "instructor": "David Johnson",
+        "availableSeats": 15,
+          "Enroll":0,
+        "price": 50,
+        "img": "https://img.freepik.com/premium-vector/children-playing-basketball-court-illustration_43633-10601.jpg?w=1380"
+    },
+    {
+        "name": "Tennis",
+        "instructor": "Alex Johnson",
+        "availableSeats": 12,
+          "Enroll":0,
+        "price": 50,
+        "img": "https://img.freepik.com/free-vector/juniors-with-rackets-training-summer-tennis-camp-academy-female-teacher-group-players-children-playing-tennis-with-fun-flat-illustration_74855-20615.jpg?w=1380&t=st=1686195052~exp=1686195652~hmac=9e0984f8687682d49bd62824b8b508af6433dd9d715c42101759b9176db85d74"
+    },
+    {
+        "name": "Swimming",
+        "instructor": "Sarah Thompson",
+        "availableSeats": 10,
+        "price": 50,
+        "img": "https://img.freepik.com/premium-photo/children-learning-swim_236854-19640.jpg?w=1380"
+    },
+    {
+        "name": "Track and Field",
+        "instructor": "Mark Johnson",
+        "availableSeats": 10,
+          "Enroll":0,
+        "price": 50,
+        "img": "https://img.freepik.com/free-vector/hand-drawn-illustration-children-physical-education-class_23-2149025372.jpg?w=1380&t=st=1686195274~exp=1686195874~hmac=4f4841cdab7223f1b7ec98dbde1ca24905fb5a782240f63b7c46a12ff6d369c5"
+    },
+    {
+        "name": " Gymnastics",
+        "instructor": "Emma Johnson",
+        "availableSeats": 12,
+        "Enroll":0,
+        "price": 50,
+        "img": "https://img.freepik.com/free-vector/scene-with-two-people-doing-gymnastic-room_1308-37334.jpg?w=1480&t=st=1686195376~exp=1686195976~hmac=ce81f4e918d3b42b71228e91c4d789e6a3be8d30a0e5d814a1a20632ae99e29f"
+    },
+    {
+        "name": "Volleyball",
+        "instructor": "Jessica Thompson",
+        "availableSeats": 10,
+        "price": 50,
+        "img": "https://img.freepik.com/free-vector/letter-v-volleyball_1308-82579.jpg?w=1380&t=st=1686195460~exp=1686196060~hmac=d9e8722cb30473414532c4259164b65c88ae8958addc1101d4d9fd36f17aa429"
+    },
+    {
+        "name": "Field Hockey",
+        "instructor": "Coach Johnson",
+        "availableSeats": 12,
+          "Enroll":0,
+        "price": 50,
+        "img": "https://img.freepik.com/free-vector/hockey-concept-illustration_114360-5867.jpg?w=1380&t=st=1686195660~exp=1686196260~hmac=43e89a13ea71dee9b7edef1ff2db1a72bdd55b1ce54af7026ab8ec11162c5aaf"
+    },
+    {
+        "name": "Cycling",
+        "instructor": "Amy Johnson",
+        "availableSeats": 10,
+          "Enroll":0,
+        "price": 50,
+        "img":"https://img.freepik.com/premium-vector/children-riding-bicycle-together-exercise-good-health_260807-189.jpg?w=1380"
+      },
+      {
+        "name": "Beginner's Golf",
+        "instructor": "John Smith",
+        "availableSeats": 10,
+        "Enroll":0,
+        "price": 50,
+        "img":"https://img.freepik.com/free-photo/golf-player_654080-1363.jpg?w=1380&t=st=1686195889~exp=1686196489~hmac=5878d1ccbcbb3e7408d4ea95970fe006bd3be67e286a8299ebecc9e1b902eca6"
+      }
+]

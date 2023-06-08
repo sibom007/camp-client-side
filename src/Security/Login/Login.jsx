@@ -1,7 +1,7 @@
 
 import LoginLogo from '../../../public/undraw_mobile_search_jxq5.svg'
 import { useForm } from "react-hook-form";
-import { Link,useLocation,useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { useContext } from 'react';
 import { MyAuthcontext } from '../../Provider/Authprovider';
@@ -9,46 +9,65 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const { Login,googlesignin } = useContext(MyAuthcontext)
-    const location =useLocation();
-    const Navigate =useNavigate()
+    const { Login, googlesignin } = useContext(MyAuthcontext)
+    const location = useLocation();
+    const Navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
         const email = data.email
         const password = data.password
-        Login(email,password)
-        .then(data =>{
+        const conformPassword = data.conformPassword
+
+        if (password == conformPassword) {
+            Login(email, password)
+                .then(data => {
+                    reset()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Login success Full',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    Navigate(from, { replace: true })
+                })
+                .catch(error => {
+                    Swal.fire(error.message, ' ', 'error')
+                })
+
+        }
+        else {
             Swal.fire({
                 position: 'top-end',
-                icon: 'success',
-                title: 'Login success Full',
+                icon: 'error',
+                title: 'Password is not mach',
                 showConfirmButton: false,
                 timer: 1500
             })
-            Navigate(from, { replace: true })
-        })
-        .catch(error => {
-            Swal.fire(error.message, ' ', 'error')
-        })
+        }
+
+
+
+
     };
 
     const handlergooglelogin = () => {
         googlesignin()
-        .then(data =>{
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Sign in success Full',
-                showConfirmButton: false,
-                timer: 1500
+            .then(data => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Sign in success Full',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                Navigate(from, { replace: true })
             })
-            Navigate(from, { replace: true })
-        })
-        .catch(error => {
-            Swal.fire(error.message, ' ', 'error')
-        })
+            .catch(error => {
+                Swal.fire(error.message, ' ', 'error')
+            })
     }
 
 
@@ -62,6 +81,9 @@ const Login = () => {
                     <input className='w-96 p-2 border-2 rounded ' placeholder='Email' {...register("email", { required: true })} />
                     <br />
                     <input className='w-96 p-2 border-2 rounded mt-3' placeholder='Password' {...register("password", { required: true })} />
+
+                    <br />
+                    <input className='w-96 p-2 border-2 rounded mt-3' placeholder='conform Password' {...register("conformPassword", { required: true })} />
                     <br />
 
                     {errors.exampleRequired && <span>This field is required</span>}

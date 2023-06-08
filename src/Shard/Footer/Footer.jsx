@@ -1,8 +1,11 @@
+import logo from '../../../public/Screenshot 2023-06-07 045813.png'
+
+
 const Footer = () => {
     return (
         <footer className="footer p-10 bg-neutral text-neutral-content">
         <div>
-        <img className="h-16 w-20" src='' alt="" />
+        <img className="h-16 w-20 rounded" src={logo} alt="" />
         <p className='text-4xl font-bold'>Email : scsds@efs.com</p>
         <p className='text-4xl font-bold'>Number : 016 000 000</p>
         <p className='text-2xl text-red-600'>#Copyright warning</p>
