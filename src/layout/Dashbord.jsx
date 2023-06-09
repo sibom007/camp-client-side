@@ -28,24 +28,24 @@ const Dashbord = () => {
 
                         {
                             isAdmin ? <>
-                                <li><NavLink to={'/dashbord/Admin'}> <FaHome /> Admin Home</NavLink></li>
-                                <li><NavLink to={'/dashbord/Additem'}><FaUtensils />  add items</NavLink></li>
-                                <li><NavLink to={'/dashbord/manageitems'}><FaWallet />manage items</NavLink></li>
-                                <li><NavLink to={'/dashbord/managebookings'}><FaBookmark /> Manage bookings  <div className="badge bg-zinc-200 text-black">+{cart?.length || 0}</div></NavLink></li>
-                                <li><NavLink to={'/dashbord/alldata'}> <FaUser /> All Users</NavLink></li>
+                                <li><NavLink to={'/dashbord/Seeallcart'}> <FaHome /> Admin Home</NavLink></li>
+                                <li><NavLink to={'/dashbord/cart'}><FaBookmark /> Manage bookings  <div className="badge bg-zinc-200 text-black">+{cart?.length || 0}</div></NavLink></li>
+                                <li><NavLink to={'/dashbord/alldata'}> <FaUser /> Manage Users</NavLink></li>
+                                <div className="divider">OR</div>
+                                <li><NavLink to={'/'}> <FaHome />Home</NavLink></li>
+
 
                             </>
                                 :
-                                isInstructor ? <li><NavLink to={'/dashbord/Admin'}> <FaHome /> instector Home</NavLink></li>
-
+                                isInstructor ? <> <li><NavLink to={'/dashbord/Admin'}> <FaHome /> instector Home</NavLink></li>
+                                    <div className="divider">OR</div>
+                                </>
                                     :
                                     <>
-                                        <li><NavLink to={'/'}> <FaHome /> User Home</NavLink></li>
-                                        <li><NavLink to={'/dashbord/pament'}><FaCalendar />  Reservation</NavLink></li>
-                                        <li><NavLink to={'/'}><FaWallet />  Payment Ristory</NavLink></li>
-                                        <li><NavLink to={'/dashbord/cart'}><FaShoppingCart />  my cart  <div className="badge bg-zinc-200 text-black">+{cart?.length || 0}</div></NavLink></li>
-                                        <li><NavLink to={'/'}> <FaStar /> add review</NavLink></li>
-                                        <li><NavLink to={'/'}><FaBookmark /> my booking</NavLink></li>
+
+                                        <li><NavLink to={'/'}> <FaHome />Home</NavLink></li>
+                                        <li><NavLink to={' /dashbord/cart'}> <FaHome /> My class</NavLink></li>
+                                        <li><NavLink to={'/'}><FaShoppingCart /> EnRoll class <div className="badge bg-zinc-200 text-black">+{cart?.length || 0}</div></NavLink></li>
 
 
                                     </>

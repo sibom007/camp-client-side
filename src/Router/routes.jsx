@@ -9,6 +9,9 @@ import Cart from "../Page/Dashbord/Cart/Cart";
 import Dashbord from "../layout/Dashbord";
 import Alluser from "../Page/Dashbord/Alluser/Alluser";
 import PrivateRoutes from "./Private/PrivateRoutes";
+// import Showallclassdata from "../Page/Classpage/Showallclassdata";
+import Seeallcarts from "../Page/Dashbord/Seeallcarts/Seeallcarts";
+
 
 
 
@@ -46,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: 'cart',
                 element: <Cart />
+            },
+            {
+                path: 'Seeallcart',
+                element: <Seeallcarts />
             },
             {
                 path: 'alldata',
