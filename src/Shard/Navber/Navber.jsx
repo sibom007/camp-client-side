@@ -49,7 +49,7 @@ const Navber = () => {
         <div>
             <div className="navbar bg-blue-300 rounded">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown z-40">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
@@ -57,7 +57,7 @@ const Navber = () => {
                             {navbar}
                         </ul>
                     </div>
-                    <div className='w-24 mask mask-hexagon tooltip tooltip-bottom' data-tip="Adventure Campus"> <img className="h-16 w-20 bg-blue-300 " src={logo} alt="" /></div>
+                    <div className='w-24 mask mask-hexagon tooltip tooltip-bottom' data-tip="Adventure Campus"> <img className="h-16 w-20 bg-blue-300 hidden md:block" src={logo} alt="" /></div>
 
 
                     <a className="  text-2xl font-bold">Adventure Campus</a>
@@ -68,7 +68,7 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className=" tooltip tooltip-bottom" data-tip={user?.displayName}>
-                    <img className="w-16 rounded-full " src='' alt="" />
+
 
                 </div>
             </div>

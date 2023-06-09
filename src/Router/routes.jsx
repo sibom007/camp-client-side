@@ -11,6 +11,7 @@ import Alluser from "../Page/Dashbord/Alluser/Alluser";
 import PrivateRoutes from "./Private/PrivateRoutes";
 // import Showallclassdata from "../Page/Classpage/Showallclassdata";
 import Seeallcarts from "../Page/Dashbord/Seeallcarts/Seeallcarts";
+import Payment from "../Page/Dashbord/Payment/Payment";
 
 
 
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
                 path: 'alldata',
                 element: <Alluser />
             },
+            {
+                path: 'Payment',
+                element: <Payment />
+            },
+
         ]
     }
 ]);
