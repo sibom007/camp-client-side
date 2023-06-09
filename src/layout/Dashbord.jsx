@@ -2,10 +2,15 @@ import React from 'react';
 import { FaBookmark, FaCalendar, FaHome, FaShoppingCart, FaStar, FaUser, FaUtensils, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import usecart from '../hooks/Usecart/usecart';
+import useAdmin from '../hooks/useAdmin/useAdmin';
+import useInstructor from '../hooks/useInstructor/useInstructor';
 
 const Dashbord = () => {
     const [cart] = usecart()
-    const isAdmin = true
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
+
+
     return (
         <div>
             <div className="drawer lg:drawer-open ">
@@ -31,17 +36,21 @@ const Dashbord = () => {
 
                             </>
                                 :
-                                <>
-                                    <li><NavLink to={'/'}> <FaHome /> User Home</NavLink></li>
-                                    <li><NavLink to={'/dashbord/pament'}><FaCalendar />  Reservation</NavLink></li>
-                                    <li><NavLink to={'/'}><FaWallet />  Payment Ristory</NavLink></li>
-                                    <li><NavLink to={'/dashbord/cart'}><FaShoppingCart />  my cart  <div className="badge bg-zinc-200 text-black">+{cart?.length || 0}</div></NavLink></li>
-                                    <li><NavLink to={'/'}> <FaStar /> add review</NavLink></li>
-                                    <li><NavLink to={'/'}><FaBookmark /> my booking</NavLink></li>
+                                isInstructor ? <li><NavLink to={'/dashbord/Admin'}> <FaHome /> instector Home</NavLink></li>
+
+                                    :
+                                    <>
+                                        <li><NavLink to={'/'}> <FaHome /> User Home</NavLink></li>
+                                        <li><NavLink to={'/dashbord/pament'}><FaCalendar />  Reservation</NavLink></li>
+                                        <li><NavLink to={'/'}><FaWallet />  Payment Ristory</NavLink></li>
+                                        <li><NavLink to={'/dashbord/cart'}><FaShoppingCart />  my cart  <div className="badge bg-zinc-200 text-black">+{cart?.length || 0}</div></NavLink></li>
+                                        <li><NavLink to={'/'}> <FaStar /> add review</NavLink></li>
+                                        <li><NavLink to={'/'}><FaBookmark /> my booking</NavLink></li>
 
 
-                                </>
+                                    </>
                         }
+
 
                     </ul>
 

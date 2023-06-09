@@ -8,6 +8,7 @@ import Classdataloade from "../Page/Classpage/Classdataloade";
 import Cart from "../Page/Dashbord/Cart/Cart";
 import Dashbord from "../layout/Dashbord";
 import Alluser from "../Page/Dashbord/Alluser/Alluser";
+import PrivateRoutes from "./Private/PrivateRoutes";
 
 
 
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashbord',
-        element: <Dashbord />,
+        element:<PrivateRoutes><Dashbord /></PrivateRoutes> ,
         children: [
             {
                 path: 'cart',
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path: 'alldata',
                 element: <Alluser />
-            }
+            },
         ]
     }
 ]);

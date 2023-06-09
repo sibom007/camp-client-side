@@ -1,12 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { FaTrash, FaUserShield } from 'react-icons/fa';
+import { FaTrash, FaUser, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../hooks/useAxiosSecure/useAxiosSecure';
+
 
 const Alluser = () => {
+
+    const [axiosSecure] = useAxiosSecure()
+
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json();
+        const res = await axiosSecure.get('/users')
+        return res.data;
     })
 
 
@@ -24,7 +29,25 @@ const Alluser = () => {
                 }
             })
     }
-    
+
+
+    const handlerinstoctor = id => {
+
+        fetch(`http://localhost:5000/users/Instructor/${id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    refetch()
+                    Swal.fire("Instructor", '', 'success')
+                }
+            })
+    }
+
+
+
+
     const handlerdelete = id => {
 
         Swal.fire({
@@ -51,6 +74,23 @@ const Alluser = () => {
                             )
                         }
                     })
+
+                // --------------ins------------//
+                fetch(`http://localhost:5000/users/Instructor/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch()
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
             }
         })
     }
@@ -67,8 +107,8 @@ const Alluser = () => {
                                 <th></th>
                                 <th>Email</th>
                                 <th>Name</th>
-                              
                                 <th>User</th>
+                                <th>Instructor</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -90,9 +130,14 @@ const Alluser = () => {
                                         </td>
                                         <th>
                                             {
-                                                item.role === "admin" ? "admin" : <button onClick={() => handleradmin(item)} className="btn btn-ghost btn-lg bg-blue-500 text-white hover:bg-blue-600"><FaUserShield /></button>
+                                                item.role === "admin" ? "admin" : <button onClick={() => handleradmin(item)} className="btn btn-ghost btn-lg bg-blue-500 text-white hover:bg-blue-600"><FaUser /></button>
                                             }
 
+                                        </th>
+                                        <th>
+                                            {
+                                                item.role === "Instructor" ? "Instructor" : <button onClick={() => handlerinstoctor(item._id)} className="btn btn-ghost btn-lg bg-yellow-500 text-white hover:bg-yellow-600"><FaUserShield /></button>
+                                            }
                                         </th>
                                         <th>
                                             <button onClick={() => handlerdelete(item._id)} className="btn btn-ghost btn-lg bg-red-500 text-white hover:bg-red-600"><FaTrash /></button>
