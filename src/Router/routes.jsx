@@ -12,6 +12,7 @@ import PrivateRoutes from "./Private/PrivateRoutes";
 // import Showallclassdata from "../Page/Classpage/Showallclassdata";
 import Seeallcarts from "../Page/Dashbord/Seeallcarts/Seeallcarts";
 import Payment from "../Page/Dashbord/Payment/Payment";
+import Instoctorpage from "../Page/Instoctorpage/Instoctorpage";
 
 
 
@@ -40,11 +41,15 @@ const router = createBrowserRouter([
             {
                 path: 'Classpage',
                 element: <Classdataloade />
+            },
+            {
+                path: 'Instctor',
+                element: <Instoctorpage />
             }
         ]
     },
     {
-        path: '/dashbord',
+        path: 'dashbord',
         element:<PrivateRoutes><Dashbord /></PrivateRoutes> ,
         children: [
             {

@@ -9,13 +9,16 @@ import { MyAuthcontext } from "../../Provider/Authprovider";
 const PrivateRoutes = ({ children }) => {
 
     const { user, loading } = useContext(MyAuthcontext);
-
+    
+    console.log(loading);
+    console.log(user);
     const location = useLocation()
 
     if (loading) {
         return <progress className="progress progress-accent w-56" value="40" max="100"></progress>
     }
 
+    
     if (user?.email) {
         return children;
 

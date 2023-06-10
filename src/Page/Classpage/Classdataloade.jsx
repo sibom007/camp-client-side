@@ -18,6 +18,7 @@ const Classdataloade = () => {
     return (
         <div>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5 '>
+               
                 {
                     classdatas.map(classdata => <Showallclassdata key={classdata._id} classdata={classdata} />)
                 }

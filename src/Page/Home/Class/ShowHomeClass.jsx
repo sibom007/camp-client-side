@@ -58,8 +58,8 @@ const ShowHomeClass = ({ classdata }) => {
 
 
     return (
-        <div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className='ml-6'>
+            <div className="card card-compact w-72 bg-base-100 shadow-xl">
                 <figure><img className='h-48 rounded' src={img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <p className='text-center text-lg'>From <br /><span className='text-4xl'>${price}</span> </p>

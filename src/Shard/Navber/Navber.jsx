@@ -17,7 +17,7 @@ const Navber = () => {
 
     const navbar = <>
         <li><Link to={'/'}>Home</Link></li>
-        <li><Link> Instructors</Link></li>
+        <li><Link to={"/Instctor"}>Instructors</Link></li>
         <li><Link to={"/Classpage"}>Classes</Link></li>
         <Link to={'/dashbord/cart'}><li>
 

@@ -4,8 +4,13 @@ import { NavLink, Outlet } from 'react-router-dom';
 import usecart from '../hooks/Usecart/usecart';
 import useAdmin from '../hooks/useAdmin/useAdmin';
 import useInstructor from '../hooks/useInstructor/useInstructor';
+import useAuth from '../hooks/useAuth/useAuth';
 
 const Dashbord = () => {
+    const { loading } = useAuth()
+    // if (loading) {
+    //     return <div>porogress</div>
+    // }
     const [cart] = usecart()
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()

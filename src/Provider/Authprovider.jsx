@@ -9,7 +9,7 @@ import axios from "axios";
 
 const auth = getAuth(app);
 
-export const MyAuthcontext = createContext()
+export const MyAuthcontext = createContext(null)
 
 
 
@@ -76,7 +76,7 @@ const Authprovider = ({ children }) => {
         setloading(false)
       }
     })
-    setloading(false)
+    // setloading(false)
     return () => {
       return unsubscribe()
     }
