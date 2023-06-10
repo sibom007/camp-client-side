@@ -6,9 +6,28 @@ import Extrasection from '../ExtraSection/Extrasection';
 import HomeClassdata from '../Class/HomeClassdata';
 import Instackhome from '../Instacktorhome/Instackhome';
 
+import { useState } from "react";
+import { motion } from "framer-motion";
+import './Home.css'
+
 const Home = () => {
+
+    const [isOn, setIsOn] = useState(false);
+    const [Theme, setTheme] = useState('light');
+
+    const toggleSwitch = () => {
+        setIsOn(!isOn)
+        setTheme(Theme === "light" ? "dark" : "light")
+    };
+    
+
+
     return (
-        <div>
+        <div data-theme={Theme}>
+            <div className="switch absolute z-40 mt-2 ml-2" data-isOn={isOn} onClick={toggleSwitch}>
+                <motion.div className="handle" layout transition={spring} />
+            </div>
+
             <Banner />
             <ParallaxProvider>
                 <Carcel />
@@ -20,4 +39,11 @@ const Home = () => {
     );
 };
 
+const spring = {
+    type: "spring",
+    stiffness: 700,
+    damping: 30
+  };
+
 export default Home;
+

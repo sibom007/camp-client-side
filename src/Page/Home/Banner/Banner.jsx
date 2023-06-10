@@ -2,7 +2,7 @@ import { Parallax } from 'react-parallax';
 
 const Banner = () => {
     return (
-        <div className='mb-10 ' >
+        <div className='mb-10 relative' >
             <Parallax
                 blur={{ min: -10, max: 10 }}
                 strength={-300}
