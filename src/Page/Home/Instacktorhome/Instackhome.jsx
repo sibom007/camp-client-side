@@ -12,7 +12,6 @@ const Instackhome = () => {
                 setInstctordatas(data);
             })
     }, [])
-    console.log(Instctordatas);
     return (
         <div>
              <h1 className='text-center text-4xl font-bold text-slate-400 mt-5'>------------------------- <br /> Top Instctor <br /> ------------------------</h1>

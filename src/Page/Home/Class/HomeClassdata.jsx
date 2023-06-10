@@ -15,7 +15,6 @@ const HomeClassdata = () => {
                 setclassdatas(data);
             })
     }, [])
-    console.log(classdatas);
 
 
     return (

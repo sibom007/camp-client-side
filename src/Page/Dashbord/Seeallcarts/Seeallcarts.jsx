@@ -10,7 +10,7 @@ const Seeallcarts = () => {
     // ---------------Lodedata----------------------//
     const [classdatas, setclassdatas] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/classdata')
+        fetch('http://localhost:5000/Instructoradddata')
             .then(res => res.json())
             .then(data => {
                 setclassdatas(data);
@@ -85,17 +85,17 @@ const Seeallcarts = () => {
                                     <td>
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={item.img} alt="Avatar Tailwind CSS Component" />
+                                                <img src={item.data.img} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        {item.name}
+                                        {item.data.name}
                                     </td>
                                     <td>
-                                        {item.instructor}
+                                        {item.data.instructor}
                                     </td>
-                                    <td className='text-center'>{item.price}</td>
+                                    <td className='text-center'>{item.data.price}</td>
                                     <th>
                                         <button className="btn btn-ghost btn-sm bg-red-500 text-white hover:bg-red-600">Approve</button>
                                     </th>

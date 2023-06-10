@@ -9,10 +9,12 @@ import Cart from "../Page/Dashbord/Cart/Cart";
 import Dashbord from "../layout/Dashbord";
 import Alluser from "../Page/Dashbord/Alluser/Alluser";
 import PrivateRoutes from "./Private/PrivateRoutes";
-// import Showallclassdata from "../Page/Classpage/Showallclassdata";
 import Seeallcarts from "../Page/Dashbord/Seeallcarts/Seeallcarts";
 import Payment from "../Page/Dashbord/Payment/Payment";
 import Instoctorpage from "../Page/Instoctorpage/Instoctorpage";
+import Addclass from "../Page/Dashbord/Instoctorlinks/addclass/Addclass";
+import Myaddclass from "../Page/Dashbord/Instoctorlinks/Myaddclass/Myaddclass";
+import Update from "../Page/Dashbord/Instoctorlinks/Myaddclass/Update/Update";
 
 
 
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashbord',
-        element:<PrivateRoutes><Dashbord /></PrivateRoutes> ,
+        element: <PrivateRoutes><Dashbord /></PrivateRoutes>,
         children: [
             {
                 path: 'cart',
@@ -68,6 +70,20 @@ const router = createBrowserRouter([
                 path: 'Payment',
                 element: <Payment />
             },
+            {
+                path: 'Adddata',
+                element: <Addclass />
+            },
+            {
+                path: 'MyAddClass',
+                element: <Myaddclass />
+            },
+            {
+                path: 'Update/:id',
+                element: <Update />,
+                loader: ({ params }) => fetch(`http://localhost:5000/Instructordata/${params.id}`)
+            },
+
 
         ]
     }
