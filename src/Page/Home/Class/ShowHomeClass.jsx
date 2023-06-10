@@ -1,16 +1,15 @@
 import React from 'react';
-
 import { Link, useNavigate } from 'react-router-dom';
-import { MyAuthcontext } from '../../Provider/Authprovider';
-import { useContext } from 'react';
 import Swal from 'sweetalert2';
+import useAuth from '../../../hooks/useAuth/useAuth';
 
-const Showallclassdata = ({ classdata }) => {
+const ShowHomeClass = ({ classdata }) => {
     const { _id, name, img, instructor, price, availableSeats, Enroll } = classdata
+
 
     const navigate = useNavigate()
 
-    const { user } = useContext(MyAuthcontext)
+    const { user } = useAuth()
 
 
     const Handlerenroll = classdata => {
@@ -58,8 +57,6 @@ const Showallclassdata = ({ classdata }) => {
     }
 
 
-
-
     return (
         <div>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -85,4 +82,4 @@ const Showallclassdata = ({ classdata }) => {
     );
 };
 
-export default Showallclassdata;
+export default ShowHomeClass;
