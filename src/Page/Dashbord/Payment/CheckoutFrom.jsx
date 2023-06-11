@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import'./CheckoutFrom.css'
 
 
-const CheckoutFrom = ({ price, cart }) => {
+const CheckoutFrom = ({ price, singlecart }) => {
     const stripe = useStripe()
     const elements = useElements();
     const [carderror, setcarderror] = useState('')
@@ -88,11 +88,12 @@ const CheckoutFrom = ({ price, cart }) => {
                 transactionId: paymentIntent.id,
                 price,
                 date: new Date(),
-                quantity: cart.length,
-                cartItems: cart.map(item => item._id),
-                enrollid: cart.map(item => item.enrollid),
-                status: 'service pending',
-                itemNames: cart.map(item => item.name)
+                // quantity: cart.length,
+                cartItems: singlecart._id,
+                enrollid: singlecart.enrollid,
+                status: 'success',
+                itemNames: singlecart.name,
+                alldata:{singlecart}
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {

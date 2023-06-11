@@ -67,8 +67,10 @@ const router = createBrowserRouter([
                 element: <Alluser />
             },
             {
-                path: 'Payment',
-                element: <Payment />
+                path: 'Payment/:id',
+                element: <Payment />,
+                loader: (({ params }) => fetch(`http://localhost:5000/Enroll/${params.id}`))
+
             },
             {
                 path: 'Adddata',

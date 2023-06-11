@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../../hooks/useAuth/useAuth';
@@ -66,14 +66,15 @@ const ShowHomeClass = ({ classdata }) => {
                     <h2 className=" card-title bg-gray-100 opacity-100 p-1 rounded text-center text-gray-400 font-bold text-2xl">{name}</h2>
 
                     <ul className='flex'>
-                        <p className='text-xl font-bold'>Instructor : {instructor}</p>
-                        <ul className='flex'>
-
+                        <ul>
+                            <li className='text-xl font-bold'>Ablabel sit :{availableSeats}</li>
                             <li className='text-xl font-bold'>EnRoll :{Enroll}</li>
                         </ul>
 
                     </ul>
+                    <p className='text-xl font-bold'>Instructor : {instructor}</p>
                     <div className="card-actions justify-center">
+
                         <Link><button onClick={() => Handlerenroll(classdata)} className="btn btn-outline btn-info">Enroll Now</button></Link>
                     </div>
                 </div>

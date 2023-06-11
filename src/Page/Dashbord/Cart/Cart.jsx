@@ -1,6 +1,6 @@
 import React from 'react';
 import usecart from '../../../hooks/Usecart/usecart';
-import { FaTrash } from 'react-icons/fa';
+import { FaTrash, FaAmazonPay } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -56,6 +56,7 @@ const Cart = () => {
                             <th>Camp photo</th>
                             <th>Name</th>
                             <th>price</th>
+                            <th>Pay</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -81,6 +82,9 @@ const Cart = () => {
                                     </td>
                                     <td className='text-center'>{item.price}</td>
                                     <th>
+                                        <Link to={`/dashbord/Payment/${item._id}`}><button className="btn btn-ghost btn-lg bg-yellow-500 text-white hover:bg-yellow-600"><FaAmazonPay /></button></Link>
+                                    </th>
+                                    <th>
                                         <button onClick={() => handlerdelete(item)} className="btn btn-ghost btn-lg bg-red-500 text-white hover:bg-red-600"><FaTrash /></button>
                                     </th>
                                 </tr>
@@ -93,5 +97,7 @@ const Cart = () => {
         </div>
     );
 };
+
+<Link ><button>update</button></Link>
 
 export default Cart;
