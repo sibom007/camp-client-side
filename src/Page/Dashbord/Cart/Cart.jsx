@@ -44,8 +44,6 @@ const Cart = () => {
             <div className='flex justify-evenly font-semibold mb-5'>
                 <h1 className='text-3xl'>Total orders:${cart.length} </h1>
                 <h1 className='text-3xl'>total price: ${total}</h1>
-                <Link to={'/dashbord/Payment'}><button className="btn-outline btn-warning btn btn-sm">Pay</button></Link>
-
             </div>
             <div className="overflow-x-auto w-full ml-5">
                 <table className="table w-full">

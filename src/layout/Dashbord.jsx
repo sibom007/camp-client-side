@@ -55,8 +55,7 @@ const Dashbord = () => {
 
                                         <li><NavLink to={'/'}> <FaHome />Home</NavLink></li>
                                         <li><NavLink to={'/dashbord/cart'}> <FaHome /> My class <div className="badge bg-zinc-200 text-black">+{cart?.length || 0}</div></NavLink></li>
-                                        <li><NavLink to={'/'}><FaShoppingCart /> EnRoll class </NavLink></li>
-                                        <li><NavLink to={'/dashbord/Payment'}> <FaHome />Payment</NavLink></li>
+                                        <li><NavLink to={'/dashbord/EnRolledclass'}><FaShoppingCart /> EnRolled class </NavLink></li>
 
 
                                     </>

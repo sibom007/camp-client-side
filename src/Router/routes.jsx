@@ -15,6 +15,7 @@ import Instoctorpage from "../Page/Instoctorpage/Instoctorpage";
 import Addclass from "../Page/Dashbord/Instoctorlinks/addclass/Addclass";
 import Myaddclass from "../Page/Dashbord/Instoctorlinks/Myaddclass/Myaddclass";
 import Update from "../Page/Dashbord/Instoctorlinks/Myaddclass/Update/Update";
+import Paymenthistory from "../Page/Dashbord/Paymenthistory/Paymenthistory";
 
 
 
@@ -84,6 +85,11 @@ const router = createBrowserRouter([
                 path: 'Update/:id',
                 element: <Update />,
                 loader: ({ params }) => fetch(`http://localhost:5000/Instructordata/${params.id}`)
+            },
+            {
+                path: 'EnRolledclass',
+                element: <Paymenthistory />
+              
             },
 
 
