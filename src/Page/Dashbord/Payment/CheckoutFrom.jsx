@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure/useAxiosSecure';
 import useAuth from '../../../hooks/useAuth/useAuth';
 import Swal from 'sweetalert2';
-import'./CheckoutFrom.css'
+import './CheckoutFrom.css'
 
 
 const CheckoutFrom = ({ price, singlecart }) => {
@@ -16,6 +16,8 @@ const CheckoutFrom = ({ price, singlecart }) => {
     const { user } = useAuth();
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
+    // const [allclass, setallclass] = useState([]);
+    const [Singledata, setSingledata] = useState([]);
 
 
 
@@ -31,6 +33,9 @@ const CheckoutFrom = ({ price, singlecart }) => {
                 })
         }
     }, [axiosSecure, price])
+
+
+
 
 
     const handleSubmit = async (event) => {
@@ -93,11 +98,47 @@ const CheckoutFrom = ({ price, singlecart }) => {
                 enrollid: singlecart.enrollid,
                 status: 'success',
                 itemNames: singlecart.name,
-                alldata:{singlecart}
+                alldata: { singlecart }
             }
+
+
+
+            fetch(`http://localhost:5000/classpdatedata/${singlecart.enrollid}`)
+                .then(res => res.json())
+                .then(data => {
+
+                    const newseat = data.availableSeats - 1
+                    const newEnroll = data.Enroll + 1
+                    const newupdatedata = {newseat,newEnroll}
+                    console.log(newseat, newEnroll)
+
+                    fetch(`http://localhost:5000/classpdatedata/${singlecart.enrollid}`, {
+                        method: "PUT",
+                        headers: {
+                            "content-type": 'application/json'
+                        },
+                        body: JSON.stringify(newupdatedata)
+                    })
+
+                })
+
+            // const newseat = Singledata.availableSeats - 1
+
+            // fetch('http://localhost:5000/classpdatedata', {
+            //     method: "PUT",
+            //     headers: {
+            //         "content-type": 'application/json'
+            //     },
+            //     body: JSON.stringify()
+            // })
+
+
+
+
+
+
             axiosSecure.post('/payments', payment)
                 .then(res => {
-                    console.log(res.data);
                     if (res.data.result.insertedId) {
                         Swal.fire({
                             position: 'top-end',
@@ -112,6 +153,8 @@ const CheckoutFrom = ({ price, singlecart }) => {
 
         }
     }
+
+
 
 
 

@@ -6,21 +6,38 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2';
 
 const Showallclassdata = ({ classdata }) => {
-    const { _id, name, img, instructor, price, availableSeats, Enroll } = classdata
-   
 
+    const { user } = useContext(MyAuthcontext)
+    const { _id, name, img, instructor, price, availableSeats, Enroll } = classdata
+
+    // const [eneollhistory, seteneollhistory] = useState([])
+
+
+
+
+    // useEffect(() => {
+    //     if (user && user.email) {
+    //         fetch(`http://localhost:5000/Paymenthistory?email=${user.email}`)
+    //             .then((res) => res.json())
+    //             .then((data) => {
+    //                 seteneollhistory(data);
+    //             });
+    //     }
+    // }, [user]);
+
+
+    // console.log(eneollhistory);
 
 
 
 
     const navigate = useNavigate()
 
-    const { user } = useContext(MyAuthcontext)
 
 
     const Handlerenroll = classdata => {
         if (user && user?.email) {
-            const Enrolldata = { enrollid: _id, name, img, price, instructor, email: user.email }
+            const Enrolldata = { enrollid: _id, name, img, price, availableSeats, instructor, email: user.email }
             fetch('http://localhost:5000/Enroll', {
                 method: "POST",
                 headers: {
@@ -74,13 +91,14 @@ const Showallclassdata = ({ classdata }) => {
                     <h2 className=" card-title bg-gray-100 opacity-100 p-1 rounded text-center text-gray-400 font-bold text-2xl">{name}</h2>
 
                     <ul className='flex'>
-                        <p className='text-xl font-bold'>Instructor : {instructor}</p>
-                        <ul className='flex'>
-
+                        
+                        <ul>
+                            <li className='text-xl font-bold'>availableSeats :{availableSeats}</li>
                             <li className='text-xl font-bold'>EnRoll :{Enroll}</li>
                         </ul>
 
                     </ul>
+                    <p className='text-xl font-bold'>Instructor : {instructor}</p>
                     <div className="card-actions justify-center">
                         <Link><button onClick={() => Handlerenroll(classdata)} className="btn btn-outline btn-info">Enroll Now</button></Link>
                     </div>
