@@ -67,11 +67,11 @@ const Showallclassdata = ({ classdata }) => {
             <Helmet>
                 <title>Adventure Campus || Class</title>
             </Helmet>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+            <div className={`card card-compact w-96 bg-base-100 shadow-xl ${availableSeats === 0 ? 'bg-red-500' : ''}`}>
                 <figure><img className='h-48 rounded' src={img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <p className='text-center text-lg'>From <br /><span className='text-4xl'>${price}</span> </p>
-                    <h2 className=" card-title bg-gray-100 opacity-100 p-1 rounded text-center text-gray-400 font-bold text-2xl">{name}</h2>
+                    <h2 className=" card-title  opacity-100 p-1 rounded text-center text-gray-400 font-bold text-2xl">{name}</h2>
 
                     <ul className='flex'>
                         

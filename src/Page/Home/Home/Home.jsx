@@ -27,7 +27,7 @@ const Home = () => {
             <Helmet>
                 <title>Adventure Campus || Home</title>
             </Helmet>
-            <div className="switch absolute z-40 mt-2 ml-2" data-isOn={isOn} onClick={toggleSwitch}>
+            <div className="switch absolute z-40 mt-72 md:mt-2 ml-2" data-isOn={isOn} onClick={toggleSwitch}>
                 <motion.div className="handle" layout transition={spring} />
             </div>
 
