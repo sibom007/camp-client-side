@@ -55,6 +55,23 @@ const Seeallcarts = () => {
     }
 
 
+    //-------------------data aprove--------------------------//
+    const handlerApprove = data => {
+        fetch(`http://localhost:5000/Instructorstatuse/${data._id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": 'application/json'
+            },
+            body: JSON.stringify({ data })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+
+    }
+
+
     return (
         <div className='w-full'>
             <div className="overflow-x-auto w-full ml-5">
@@ -67,6 +84,7 @@ const Seeallcarts = () => {
                             <th>Name</th>
                             <th>instructor</th>
                             <th>price</th>
+                            <th>status</th>
                             <th> Approve</th>
                             <th> Deny </th>
                             <th> send feedback</th>
@@ -85,19 +103,20 @@ const Seeallcarts = () => {
                                     <td>
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={item.data.img} alt="Avatar Tailwind CSS Component" />
+                                                <img src={item.img} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        {item.data.name}
+                                        {item.name}
                                     </td>
                                     <td>
-                                        {item.data.instructor}
+                                        {item.instructor}
                                     </td>
-                                    <td className='text-center'>{item.data.price}</td>
+                                    <td className='text-center'>{item.price}</td>
+                                    <td className='text-center'>{item.status}</td>
                                     <th>
-                                        <button className="btn btn-ghost btn-sm bg-red-500 text-white hover:bg-red-600">Approve</button>
+                                        <button onClick={() => handlerApprove(item)} className="btn btn-ghost btn-sm bg-red-500 text-white hover:bg-red-600">Approve</button>
                                     </th>
                                     <th>
                                         <button className="btn btn-ghost btn-sm bg-red-500 text-white hover:bg-red-600">Deny</button>

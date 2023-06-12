@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Showallinstoctor = ({ Instctordata }) => {
     const { _id, email, name, image } = Instctordata

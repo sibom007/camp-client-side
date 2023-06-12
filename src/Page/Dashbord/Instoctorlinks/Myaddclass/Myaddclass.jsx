@@ -12,22 +12,24 @@ const Myaddclass = () => {
             })
     }, [])
 
-
-    function openModal() {
-        const modal = document.getElementById('my_modal_1');
-        modal.showModal();
-    }
+    console.log(Myallclasss);
 
 
+    // function openModal() {
+    //     const modal = document.getElementById('my_modal_1');
+    //     modal.showModal();
+    // }
 
-    const handlersubmit = e => {
-        console.log(e)
-        const name = e.target.name.value
-        const img = e.target.img.value
-        const Ablablesit = e.target.Ablablesit.value
-        const _id = e.target._id.value
-        console.log(name,img,Ablablesit,_id);
-    }
+
+
+    // const handlersubmit = e => {
+    //     console.log(e)
+    //     const name = e.target.name.value
+    //     const img = e.target.img.value
+    //     const Ablablesit = e.target.Ablablesit.value
+    //     const _id = e.target._id.value
+    //     console.log(name,img,Ablablesit,_id);
+    // }
     return (
         <div className='w-full'>
             <h1 className='text-center text-4xl font-bold text-slate-400 mt-5'>------------------------- <br /> Add Class,s<br /> ------------------------</h1>
@@ -58,16 +60,16 @@ const Myaddclass = () => {
                                         <td>
                                             <div className="avatar">
                                                 <div className="mask mask-squircle w-12 h-12">
-                                                    <img src={item.data.img} alt="Avatar Tailwind CSS Component" />
+                                                    <img src={item.img} alt="Avatar Tailwind CSS Component" />
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            {item.data.name}
+                                            {item.name}
                                         </td>
-                                        <td className='text-center'>{item.data.price}</td>
+                                        <td className='text-center'>{item.price}</td>
                                         <th>
-                                            {item.data.status}
+                                            {item.status}
                                         </th>
                                         <th>
                                           <Link to={`/dashbord/Update/${item._id}`}><button>update</button></Link>
