@@ -15,7 +15,7 @@ const ShowHomeClass = ({ classdata }) => {
     const Handlerenroll = classdata => {
         if (user && user?.email) {
             const Enrolldata = { enrollid: _id, name, img, price, instructor, email: user.email }
-            fetch('http://localhost:5000/Enroll', {
+            fetch('https://assiment-12-server.vercel.app/Enroll', {
                 method: "POST",
                 headers: {
                     "content-type": 'application/json'

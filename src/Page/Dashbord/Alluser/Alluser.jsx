@@ -19,7 +19,7 @@ const Alluser = () => {
 
     const handleradmin = user => {
 
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://assiment-12-server.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -34,7 +34,7 @@ const Alluser = () => {
 
     const handlerinstoctor = id => {
 
-        fetch(`http://localhost:5000/users/Instructor/${id}`, {
+        fetch(`https://assiment-12-server.vercel.app/users/Instructor/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -61,7 +61,7 @@ const Alluser = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/admin/${id}`, {
+                fetch(`https://assiment-12-server.vercel.app/users/admin/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -77,7 +77,7 @@ const Alluser = () => {
                     })
 
                 // --------------ins------------//
-                fetch(`http://localhost:5000/users/Instructor/${id}`, {
+                fetch(`https://assiment-12-server.vercel.app/users/Instructor/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

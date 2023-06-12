@@ -14,7 +14,7 @@ const Addclass = () => {
         console.log(data);
         const newdata = { name: data.name, img: data.img, instructor: data.instructor, instorctoremail: data.instorctoremail, status: data.status, Enroll: parseFloat(data.Enroll), availableSeats: parseFloat(data.availableSeats), price: parseFloat(data.price) }
 
-        fetch('http://localhost:5000/Instructoradddata', {
+        fetch('https://assiment-12-server.vercel.app/Instructoradddata', {
             method: "POST",
             headers: {
                 "content-type": 'application/json'

@@ -7,7 +7,7 @@ const Instoctorpage = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/Instructor')
+        fetch('https://assiment-12-server.vercel.app/Instructor')
             .then(res => res.json())
             .then(data => {
                 setInstctordatas(data);

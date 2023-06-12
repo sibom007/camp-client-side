@@ -70,7 +70,7 @@ const router = createBrowserRouter([
             {
                 path: 'Payment/:id',
                 element: <Payment />,
-                loader: (({ params }) => fetch(`http://localhost:5000/Enroll/${params.id}`))
+                loader: (({ params }) => fetch(`https://assiment-12-server.vercel.app/Enroll/${params.id}`))
 
             },
             {
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
             {
                 path: 'Update/:id',
                 element: <Update />,
-                loader: ({ params }) => fetch(`http://localhost:5000/Instructordata/${params.id}`)
+                loader: ({ params }) => fetch(`https://assiment-12-server.vercel.app/Instructordata/${params.id}`)
             },
             {
                 path: 'EnRolledclass',

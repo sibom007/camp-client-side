@@ -7,7 +7,7 @@ const Classdataloade = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/classdata')
+        fetch('https://assiment-12-server.vercel.app/classdata')
             .then(res => res.json())
             .then(data => {
                 setclassdatas(data);

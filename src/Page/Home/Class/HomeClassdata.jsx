@@ -9,7 +9,7 @@ const HomeClassdata = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/classdatalimit')
+        fetch('https://assiment-12-server.vercel.app/classdatalimit')
             .then(res => res.json())
             .then(data => {
                 setclassdatas(data);

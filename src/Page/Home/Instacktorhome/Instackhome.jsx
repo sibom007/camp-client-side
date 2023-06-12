@@ -6,7 +6,7 @@ const Instackhome = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/Instructorlimit')
+        fetch('https://assiment-12-server.vercel.app/Instructorlimit')
             .then(res => res.json())
             .then(data => {
                 setInstctordatas(data);

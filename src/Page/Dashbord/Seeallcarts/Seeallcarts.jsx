@@ -12,7 +12,7 @@ const Seeallcarts = () => {
     // ---------------Lodedata----------------------//
     const [classdatas, setclassdatas] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/Instructoradddata')
+        fetch('https://assiment-12-server.vercel.app/Instructoradddata')
             .then(res => res.json())
             .then(data => {
                 setclassdatas(data);
@@ -25,7 +25,7 @@ const Seeallcarts = () => {
         const email = e.target.email.value
         const name = e.target.name.value
         const twodata = { Feedback: feedback, Email: email, name: name }
-        fetch('http://localhost:5000/feedback', {
+        fetch('https://assiment-12-server.vercel.app/feedback', {
             method: "POST",
             headers: {
                 "content-type": 'application/json'
@@ -59,7 +59,7 @@ const Seeallcarts = () => {
 
     //-------------------data aprove--------------------------//
     const handlerApprove = data => {
-        fetch(`http://localhost:5000/Instructorstatuse/${data._id}`, {
+        fetch(`https://assiment-12-server.vercel.app/Instructorstatuse/${data._id}`, {
             method: "PUT",
             headers: {
                 "content-type": 'application/json'

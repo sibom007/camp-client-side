@@ -102,7 +102,7 @@ const CheckoutFrom = ({ price, singlecart }) => {
                 alldata: { singlecart }
             }
 
-            fetch(`http://localhost:5000/classpdatedata/${singlecart.enrollid}`)
+            fetch(`https://assiment-12-server.vercel.app/classpdatedata/${singlecart.enrollid}`)
                 .then(res => res.json())
                 .then(data => {
 
@@ -111,7 +111,7 @@ const CheckoutFrom = ({ price, singlecart }) => {
                     const newupdatedata = { newseat, newEnroll }
                     console.log(newseat, newEnroll)
 
-                    fetch(`http://localhost:5000/classpdatedata/${singlecart.enrollid}`, {
+                    fetch(`https://assiment-12-server.vercel.app/classpdatedata/${singlecart.enrollid}`, {
                         method: "PUT",
                         headers: {
                             "content-type": 'application/json'

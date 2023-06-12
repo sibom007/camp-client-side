@@ -32,7 +32,7 @@ const Regester = () => {
 
                         .then(() => {
                             const savedata = { name: name, email: email, img: data.photoURL }
-                            fetch("http://localhost:5000/users", {
+                            fetch("https://assiment-12-server.vercel.app/users", {
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json'
@@ -81,7 +81,7 @@ const Regester = () => {
             .then(data => {
                 const savedata = { name: data.user?.displayName, email: data.user?.email, img:data.user?.photoURL }
                 console.log(data.user                    );
-                fetch("http://localhost:5000/users", {
+                fetch("https://assiment-12-server.vercel.app/users", {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

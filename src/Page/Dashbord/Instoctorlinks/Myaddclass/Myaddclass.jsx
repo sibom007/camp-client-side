@@ -6,7 +6,7 @@ const Myaddclass = () => {
     const [Myallclasss, setMyallclasss] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/Instructoradddata')
+        fetch('https://assiment-12-server.vercel.app/Instructoradddata')
             .then(res => res.json())
             .then(data => {
                 setMyallclasss(data)

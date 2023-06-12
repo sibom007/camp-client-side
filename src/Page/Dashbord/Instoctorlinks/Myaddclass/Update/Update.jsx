@@ -16,7 +16,7 @@ const Update = () => {
 
         console.log(data);
 
-        fetch(`http://localhost:5000/Instructordata/${_id}`, {
+        fetch(`https://assiment-12-server.vercel.app/Instructordata/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": 'application/json'
