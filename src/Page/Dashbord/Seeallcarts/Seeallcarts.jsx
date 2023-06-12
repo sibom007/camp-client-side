@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { FaPersonBooth, FaTrash } from 'react-icons/fa';
+// import { FaPersonBooth, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAuth from '../../../hooks/useAuth/useAuth';
 
 const Seeallcarts = () => {
 
     const { user } = useAuth()
+
 
     // ---------------Lodedata----------------------//
     const [classdatas, setclassdatas] = useState([])
@@ -66,7 +67,15 @@ const Seeallcarts = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Cart add success full',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             })
 
     }
@@ -116,7 +125,7 @@ const Seeallcarts = () => {
                                     <td className='text-center'>{item.price}</td>
                                     <td className='text-center'>{item.status}</td>
                                     <th>
-                                        <button onClick={() => handlerApprove(item)} className="btn btn-ghost btn-sm bg-red-500 text-white hover:bg-red-600">Approve</button>
+                                            <button onClick={() => handlerApprove(item)} className="btn btn-ghost btn-sm bg-red-500 text-white hover:bg-red-600">Approve</button>
                                     </th>
                                     <th>
                                         <button className="btn btn-ghost btn-sm bg-red-500 text-white hover:bg-red-600">Deny</button>
