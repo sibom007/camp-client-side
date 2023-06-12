@@ -11,7 +11,7 @@ const Addclass = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const newdata = { name: data.name, img: data.img, instructor: data.instructor, instorctoremail: data.instorctoremail, status: data.status, Enroll: data.Enroll, availableSeats: data.availableSeats, price: data.price }
+        const newdata = { name: data.name, img: data.img, instructor: data.instructor, instorctoremail: data.instorctoremail, status: data.status, Enroll: parseFloat(data.Enroll), availableSeats: parseFloat(data.availableSeats), price: parseFloat(data.price) }
 
         fetch('http://localhost:5000/Instructoradddata', {
             method: "POST",

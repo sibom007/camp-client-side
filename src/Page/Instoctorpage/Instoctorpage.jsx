@@ -14,6 +14,8 @@ const Instoctorpage = () => {
             })
     }, [])
 
+    console.log(Instctordatas);
+
 
     return (
         <div>

@@ -5,6 +5,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure/useAxiosSecure';
 import useAuth from '../../../hooks/useAuth/useAuth';
 import Swal from 'sweetalert2';
 import './CheckoutFrom.css'
+import { useNavigate } from 'react-router-dom';
 
 
 const CheckoutFrom = ({ price, singlecart }) => {
@@ -16,8 +17,7 @@ const CheckoutFrom = ({ price, singlecart }) => {
     const { user } = useAuth();
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
-    // const [allclass, setallclass] = useState([]);
-    const [Singledata, setSingledata] = useState([]);
+    const Navigate = useNavigate()
 
 
 
@@ -101,15 +101,13 @@ const CheckoutFrom = ({ price, singlecart }) => {
                 alldata: { singlecart }
             }
 
-
-
             fetch(`http://localhost:5000/classpdatedata/${singlecart.enrollid}`)
                 .then(res => res.json())
                 .then(data => {
 
                     const newseat = data.availableSeats - 1
                     const newEnroll = data.Enroll + 1
-                    const newupdatedata = {newseat,newEnroll}
+                    const newupdatedata = { newseat, newEnroll }
                     console.log(newseat, newEnroll)
 
                     fetch(`http://localhost:5000/classpdatedata/${singlecart.enrollid}`, {
@@ -121,22 +119,6 @@ const CheckoutFrom = ({ price, singlecart }) => {
                     })
 
                 })
-
-            // const newseat = Singledata.availableSeats - 1
-
-            // fetch('http://localhost:5000/classpdatedata', {
-            //     method: "PUT",
-            //     headers: {
-            //         "content-type": 'application/json'
-            //     },
-            //     body: JSON.stringify()
-            // })
-
-
-
-
-
-
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     if (res.data.result.insertedId) {
@@ -148,9 +130,10 @@ const CheckoutFrom = ({ price, singlecart }) => {
                             timer: 1500
                         })
                     }
+
                 })
 
-
+            Navigate('/')
         }
     }
 
