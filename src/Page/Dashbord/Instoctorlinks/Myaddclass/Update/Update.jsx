@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -40,6 +41,9 @@ const Update = () => {
     }
     return (
         <div className='w-full ml-10'>
+             <Helmet>
+                <title>Adventure Campus || Update data</title>
+            </Helmet>
             <div >
                 <h1 className='text-center text-4xl font-bold text-slate-400 mt-5'>------------------------- <br /> Update Class<br /> ------------------------</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>

@@ -6,6 +6,7 @@ import useAuth from '../../../hooks/useAuth/useAuth';
 import Swal from 'sweetalert2';
 import './CheckoutFrom.css'
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 
 const CheckoutFrom = ({ price, singlecart }) => {
@@ -143,6 +144,9 @@ const CheckoutFrom = ({ price, singlecart }) => {
 
     return (
         <div>
+             <Helmet>
+                <title>Adventure Campus || Payment</title>
+            </Helmet>
             <form onSubmit={handleSubmit}>
                 <CardElement
                     options={{

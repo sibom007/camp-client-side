@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../../hooks/useAuth/useAuth';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Addclass = () => {
 
@@ -42,6 +43,9 @@ const Addclass = () => {
 
     return (
         <div className='w-full ml-10'>
+             <Helmet>
+                <title>Adventure Campus || Add Class</title>
+            </Helmet>
             <h1 className='text-center text-4xl font-bold text-slate-400 mt-5'>------------------------- <br /> Add Class<br /> ------------------------</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
 

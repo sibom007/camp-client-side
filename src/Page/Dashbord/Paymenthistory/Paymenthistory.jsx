@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth/useAuth';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Paymenthistory = () => {
     const { user } = useAuth()
@@ -20,6 +21,9 @@ const Paymenthistory = () => {
 
     return (
         <div className='w-full'>
+             <Helmet>
+                <title>Adventure Campus || Payment History</title>
+            </Helmet>
             <div >
                 <div className="overflow-x-auto w-full ml-5">
                     <table className="table w-full">

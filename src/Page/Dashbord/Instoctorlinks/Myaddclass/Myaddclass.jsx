@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const Myaddclass = () => {
@@ -12,26 +13,11 @@ const Myaddclass = () => {
             })
     }, [])
 
-    console.log(Myallclasss);
-
-
-    // function openModal() {
-    //     const modal = document.getElementById('my_modal_1');
-    //     modal.showModal();
-    // }
-
-
-
-    // const handlersubmit = e => {
-    //     console.log(e)
-    //     const name = e.target.name.value
-    //     const img = e.target.img.value
-    //     const Ablablesit = e.target.Ablablesit.value
-    //     const _id = e.target._id.value
-    //     console.log(name,img,Ablablesit,_id);
-    // }
     return (
         <div className='w-full'>
+             <Helmet>
+                <title>Adventure Campus || My add Class</title>
+            </Helmet>
             <h1 className='text-center text-4xl font-bold text-slate-400 mt-5'>------------------------- <br /> Add Class,s<br /> ------------------------</h1>
             <div >
                 <div className="overflow-x-auto w-full ml-5">

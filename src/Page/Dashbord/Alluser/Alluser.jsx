@@ -3,6 +3,7 @@ import React from 'react';
 import { FaTrash, FaUser, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure/useAxiosSecure';
+import { Helmet } from 'react-helmet-async';
 
 
 const Alluser = () => {
@@ -98,6 +99,9 @@ const Alluser = () => {
 
     return (
         <div className='w-full'>
+             <Helmet>
+                <title>Adventure Campus || All User</title>
+            </Helmet>
             <div >
                 <div className="overflow-x-auto w-full ml-5">
                     <table className="table w-full ">

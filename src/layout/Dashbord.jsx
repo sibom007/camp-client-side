@@ -5,6 +5,7 @@ import usecart from '../hooks/Usecart/usecart';
 import useAdmin from '../hooks/useAdmin/useAdmin';
 import useInstructor from '../hooks/useInstructor/useInstructor';
 import useAuth from '../hooks/useAuth/useAuth';
+import { Helmet } from 'react-helmet-async';
 
 const Dashbord = () => {
     const { loading } = useAuth()
@@ -18,6 +19,9 @@ const Dashbord = () => {
 
     return (
         <div>
+             <Helmet>
+                <title>Adventure Campus || Dashbord</title>
+            </Helmet>
             <div className="drawer lg:drawer-open ">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
@@ -43,7 +47,7 @@ const Dashbord = () => {
                             </>
                                 :
                                 isInstructor ? <> 
-                                <li><NavLink to={'/dashbord/Admin'}> <FaHome /> instector Home</NavLink></li>
+                                <li><NavLink to={'/'}> <FaHome /> instector Home</NavLink></li>
                                 <li><NavLink to={'/dashbord/Adddata'}> <FaHome /> instector Add class</NavLink></li>
                                 <li><NavLink to={'/dashbord/MyAddClass'}> <FaHome /> My class</NavLink></li>
                                     <div className="divider">OR</div>

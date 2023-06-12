@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 // import { FaPersonBooth, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAuth from '../../../hooks/useAuth/useAuth';
+import { Helmet } from 'react-helmet-async';
 
 const Seeallcarts = () => {
 
@@ -83,6 +84,9 @@ const Seeallcarts = () => {
 
     return (
         <div className='w-full'>
+            <Helmet>
+                <title>Adventure Campus || Approveabal</title>
+            </Helmet>
             <div className="overflow-x-auto w-full ml-5">
                 <table className="table w-full">
                     {/* head */}
