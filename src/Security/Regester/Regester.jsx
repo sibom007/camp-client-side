@@ -5,6 +5,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { MyAuthcontext } from '../../Provider/Authprovider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Regester = () => {
     const { createuser, Updateprofil, googlesignin } = useContext(MyAuthcontext)
@@ -115,6 +116,9 @@ const Regester = () => {
     return (
 
         <div className='flex items-center space-x-5 mt-5 mb-5'>
+            <Helmet>
+                <title>Adventure Campus || Regester</title>
+            </Helmet>
             <div><img src={signloge} alt="" /></div>
             <div>
                 <form className='ml-10' onSubmit={handleSubmit(onSubmit)}>

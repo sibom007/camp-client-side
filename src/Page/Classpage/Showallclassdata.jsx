@@ -4,32 +4,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { MyAuthcontext } from '../../Provider/Authprovider';
 import { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Showallclassdata = ({ classdata }) => {
 
     const { user } = useContext(MyAuthcontext)
     const { _id, name, img, instructor, price, availableSeats, Enroll } = classdata
-
-    // const [eneollhistory, seteneollhistory] = useState([])
-
-
-
-
-    // useEffect(() => {
-    //     if (user && user.email) {
-    //         fetch(`http://localhost:5000/Paymenthistory?email=${user.email}`)
-    //             .then((res) => res.json())
-    //             .then((data) => {
-    //                 seteneollhistory(data);
-    //             });
-    //     }
-    // }, [user]);
-
-
-    // console.log(eneollhistory);
-
-
-
 
     const navigate = useNavigate()
 
@@ -84,6 +64,9 @@ const Showallclassdata = ({ classdata }) => {
 
     return (
         <div>
+            <Helmet>
+                <title>Adventure Campus || Class</title>
+            </Helmet>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
                 <figure><img className='h-48 rounded' src={img} alt="Shoes" /></figure>
                 <div className="card-body">

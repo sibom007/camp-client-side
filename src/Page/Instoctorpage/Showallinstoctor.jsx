@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 // import { Link } from 'react-router-dom';
 
 const Showallinstoctor = ({ Instctordata }) => {
@@ -6,6 +7,9 @@ const Showallinstoctor = ({ Instctordata }) => {
 
     return (
         <div className=' mt-5 mb-5 rounded'>
+            <Helmet>
+                <title>Adventure Campus || Instctor</title>
+            </Helmet>
           <div className="card card-compact w-72 bg-base-100 shadow-xl">
                 <figure><img className='h-48 rounded mt-3' src={image} alt="Shoes" /></figure>
                 <div className="card-body">

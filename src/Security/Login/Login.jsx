@@ -6,6 +6,7 @@ import { FaGoogle } from "react-icons/fa";
 import { useContext } from 'react';
 import { MyAuthcontext } from '../../Provider/Authprovider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -74,6 +75,9 @@ const Login = () => {
 
     return (
         <div className='flex items-center space-x-5 mt-5 mb-5'>
+             <Helmet>
+                <title>Adventure Campus || Login</title>
+            </Helmet>
             <div><img src={LoginLogo} alt="" /></div>
             <div>
                 <form className='ml-10' onSubmit={handleSubmit(onSubmit)}>
