@@ -19,35 +19,23 @@ const Login = () => {
     const onSubmit = data => {
         const email = data.email
         const password = data.password
-        const conformPassword = data.conformPassword
 
-        if (password == conformPassword) {
-            Login(email, password)
-                .then(data => {
-                    reset()
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Login success Full',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    Navigate(from, { replace: true })
+        Login(email, password)
+            .then(data => {
+                reset()
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Login success Full',
+                    showConfirmButton: false,
+                    timer: 1500
                 })
-                .catch(error => {
-                    Swal.fire(error.message, ' ', 'error')
-                })
-
-        }
-        else {
-            Swal.fire({
-                position: 'top-end',
-                icon: 'error',
-                title: 'Password is not mach',
-                showConfirmButton: false,
-                timer: 1500
+                Navigate(from, { replace: true })
             })
-        }
+            .catch(error => {
+                Swal.fire(error.message, ' ', 'error')
+            })
+
 
 
 
@@ -75,7 +63,7 @@ const Login = () => {
 
     return (
         <div className='flex items-center space-x-5 mt-5 mb-5'>
-             <Helmet>
+            <Helmet>
                 <title>Adventure Campus || Login</title>
             </Helmet>
             <div><img src={LoginLogo} alt="" /></div>
@@ -86,8 +74,6 @@ const Login = () => {
                     <br />
                     <input className='w-96 p-2 border-2 rounded mt-3' placeholder='Password' {...register("password", { required: true })} />
 
-                    <br />
-                    <input className='w-96 p-2 border-2 rounded mt-3' placeholder='conform Password' {...register("conformPassword", { required: true })} />
                     <br />
 
                     {errors.exampleRequired && <span>This field is required</span>}
