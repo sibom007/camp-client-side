@@ -12,7 +12,7 @@ const useInstructor = () => {
         enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/users/Instructor/${user?.email}`);
-            // console.log('is admin response', res)
+            console.log('is in response', res.data.Instructor)
             return res.data.Instructor;
         }
     })

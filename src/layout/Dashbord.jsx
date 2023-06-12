@@ -19,7 +19,7 @@ const Dashbord = () => {
 
     return (
         <div>
-             <Helmet>
+            <Helmet>
                 <title>Adventure Campus || Dashbord</title>
             </Helmet>
             <div className="drawer lg:drawer-open ">
@@ -46,12 +46,12 @@ const Dashbord = () => {
 
                             </>
                                 :
-                                isInstructor ? <> 
-                                <li><NavLink to={'/'}> <FaHome /> instector Home</NavLink></li>
-                                <li><NavLink to={'/dashbord/Adddata'}> <FaHome /> instector Add class</NavLink></li>
-                                <li><NavLink to={'/dashbord/MyAddClass'}> <FaHome /> My class</NavLink></li>
+                                isInstructor ? <>
+                                    <li><NavLink to={'/'}> <FaHome /> instector Home</NavLink></li>
+                                    <li><NavLink to={'/dashbord/Adddata'}> <FaHome /> instector Add class</NavLink></li>
+                                    <li><NavLink to={'/dashbord/MyAddClass'}> <FaHome /> My class</NavLink></li>
                                     <div className="divider">OR</div>
-                                <li><NavLink to={'/'}> <FaHome />Home</NavLink></li>
+                                    <li><NavLink to={'/'}> <FaHome />Home</NavLink></li>
 
                                 </>
                                     :
