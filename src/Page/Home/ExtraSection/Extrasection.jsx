@@ -1,16 +1,46 @@
-import { FcLike,FcAddressBook,FcReadingEbook,FcBusinessman } from "react-icons/fc";
+import { FaEye, FaHeart, FaUser, FaUserPlus } from "react-icons/fa";
 
 const Extrasection = () => {
-    return (
-        <div>
-            <div className='grid md:grid-cols-4 grid-cols-2 md:space-x-8 md:ml-32 mt-5 mb-6 '>
-                <div className='border-4 mt-5 ml-4 rounded-lg text-xl font-bold text-center border-sky-400 text-yellow-300 w-36 h-36 md:hover:w-56 md:hover:h-52 md:hover:bg-sky-300 duration-700'><FcLike className='ml-9 w-16 h-16'/> total Likes <br />25.6K</div>
-                <div className='border-4 mt-5 ml-4 rounded-lg text-xl font-bold text-center border-sky-400 w-36 h-36 text-orange-400 md:hover:w-56 md:hover:h-52 md:hover:bg-sky-300 duration-700'><FcAddressBook className='ml-9 w-16 h-16'/> Page Views <br /> 2.6M</div>
-                <div className='border-4 mt-5 ml-4 rounded-lg text-pink-500 text-xl font-bold text-center border-sky-400 w-36 h-36 md:hover:w-56 md:hover:h-52 md:hover:bg-sky-300 duration-700'><FcReadingEbook className='ml-9 w-16 h-16'/> New Registers<br /> 1,200</div>
-                <div className='border-4 mt-5 ml-4 rounded-lg text-xl font-bold text-center border-sky-400 w-36 h-36 md:hover:w-56 md:hover:h-52 md:hover:bg-sky-300 duration-700'><FcBusinessman className='ml-9 w-16 h-16'/> New Users <br /> 4,200</div>
-            </div>
+  return (
+    <div className="bg-zinc-100 p-6 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="bg-white shadow rounded-lg p-4 flex items-center space-x-4">
+          <FaHeart className="text-red-500 text-3xl" />
+          <div>
+            <p className="text-gray-600">Total Likes</p>
+            <p className="text-2xl font-semibold">25.8K</p>
+          </div>
         </div>
-    );
+
+        <div className="bg-white shadow rounded-lg p-4 flex items-center space-x-4">
+          <FaEye className="text-blue-500 text-3xl" />
+          <div>
+            <p className="text-gray-600">Page Views</p>
+            <p className="text-2xl font-semibold">2.6M</p>
+          </div>
+        </div>
+
+        <div className="bg-white shadow rounded-lg p-4 flex items-center space-x-4">
+          <FaUserPlus className="text-green-500 text-3xl" />
+          <div>
+            <p className="text-gray-600">New Registers</p>
+            <p className="text-2xl font-semibold">1,200</p>
+          </div>
+        </div>
+
+        <div className="bg-white shadow rounded-lg p-4 flex items-center space-x-4">
+          <FaUser className="text-orange-500 text-3xl" />
+          <div>
+            <p className="text-gray-600">New Users</p>
+            <p className="text-2xl font-semibold">4,200</p>
+          </div>
+        </div>
+      </div>
+      <div className="mt-6 text-center">
+        <p className="text-gray-600">Top Instructor</p>
+      </div>
+    </div>
+  );
 };
 
 export default Extrasection;

@@ -14,8 +14,8 @@ import { HelmetProvider } from 'react-helmet-async';
 
 const queryClient = new QueryClient()
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-6xl mx-auto'>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <div className="bg-white">
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         <Authprovider>
@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </HelmetProvider>
         </Authprovider>
       </QueryClientProvider>
-    </React.StrictMode>,
+    </React.StrictMode>
+    ,
   </div>
-
-)
+);

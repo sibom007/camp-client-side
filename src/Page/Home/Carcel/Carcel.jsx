@@ -1,100 +1,31 @@
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
-import coracal1 from '../../../../public/assiment -12//cricket-5365724_1280.jpg'
-import coracal2 from '../../../../public/assiment -12/cricket-724620_1280.jpg'
-import coracal3 from '../../../../public/assiment -12/pictogram-3101811_1280.jpg'
-import coracal4 from '../../../../public/assiment -12/table-tennis-815715_1280.jpg'
-import coracal5 from '../../../../public/assiment -12/table-tennis-1428052_1280.jpg'
-import coracal6 from '../../../../public/assiment -12/tennis-2096676_1280.jpg'
-import coracal7 from '../../../../public/assiment -12/table-tennis-815715_1280.jpg'
-
-
 const Carcel = () => {
-
-    return (
-        <div className='p-3'>
-
-            <Swiper
-                pagination={{
-                    dynamicBullets: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper rounded"
-            >
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src={coracal1} alt="" />
-                    <div className="text-white text-center relative">
-                        <p className='text-3xl mt-36 font-bold font-sans'> # School sports promote physical fitness,<br /> teamwork, and discipline, <br /> shaping well-rounded individuals #</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src="https://cdn.pixabay.com/photo/2019/07/15/16/59/football-4339906_1280.jpg" alt="" />
-                    <div className="text-white text-center relative">
-                        <p className='text-3xl mt-36 font-bold text-orange-400'> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                            Students participate in a variety of sports like soccer, basketball, and swimming,  #</p>
-                    </div>
-                </SwiperSlide>
-                <div hidden  className="text-white text-center relative md:block">
-                    <p className='text-3xl mt-36 font-bold '> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                        Students participate in a variety of sports like soccer, basketball, and swimming,  #</p>
-                </div>
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src={coracal2} alt="" />
-                    <div className="text-white text-center relative">
-                        <p className='text-3xl mt-36 font-bold text-orange-400'> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                            Students participate in a variety of sports like soccer, basketball, and swimming,  #</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src="https://media.istockphoto.com/id/858960150/photo/back-view-of-young-girl-watching-a-foodball-game.jpg?s=2048x2048&w=is&k=20&c=X5Rw4GLRn1tOMdyKbgCPBd62zc5Oz39sLh4U8fH0YMA=" alt="" />
-                    <div className="text-white text-center relative">
-                        <p className='text-3xl mt-36 font-bold text-orange-400'> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                            Students participate in a variety of sports like soccer, basketball, and swimming,  #</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src={coracal3} alt="" />
-                    <div className="text-white text-center relative ">
-                        <p className='text-3xl mt-36 font-bold'> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                            Students participate in a variety of sports like soccer, basketball, and swimming,  #</p>
-                    </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src={coracal4} alt="" />
-                    <div className="text-white text-center relative">
-                        <p className='text-3xl mt-36 font-bold '> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                            Students participate in a variety of sports like soccer, basketball, and swimming,  #</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src={coracal5} alt="" />
-                    <div className="text-white text-center relative">
-                        <p className='text-3xl mt-36 font-bold text-orange-400'> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                            Students participate in a variety of sports like soccer, basketball, and swimming,  #</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src={coracal6} alt="" />
-                    <div className="text-white text-center relative">
-                        <p className='text-3xl mt-36 font-bold '> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                            Students participate in a variety of sports like soccer, basketball, and swimming,  #</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img className='w-full h-[550px] absolute' src={coracal7} alt="" />
-                    <div className="text-white text-center relative">
-                        <p className='text-3xl mt-36 font-bold'> # Engaging in school sports fosters resilience, sportsmanship, and time management skills.
-                            Students participate in a variety of sports like soccer, basketball, and swimming, #</p>
-                    </div>
-                </SwiperSlide>
-            </Swiper>
-
-        </div>
-    );
+  return (
+    <div className="flex flex-col md:flex-row items-center bg-zinc-200   p-8 rounded-lg shadow-md">
+      <div className="md:w-1/2 p-4">
+        <h2 className="text-blue-600 text-lg font-bold">Adventure Campus</h2>
+        <h1 className="text-3xl font-bold text-gray-800 mt-2">Inquire</h1>
+        <p className="text-gray-600 mt-4 text-lg">
+          Completing an inquiry form on a school’s website is a quick and easy
+          way to signal that your family is interested in applying and would
+          like to learn more. Inquiry forms are often optional, but we recommend
+          that you complete this step as soon as you’re comfortable engaging in
+          admission conversations.
+        </p>
+        <p className="text-gray-600 mt-4 text-lg">
+          Why? Because the sooner you contact the school, the more time you have
+          to establish a relationship with its admission team, giving you an
+          advantage over families that come into the process later.
+        </p>
+      </div>
+      <div className="md:w-1/2  flex justify-center p-4">
+        <img
+          src="https://cdn.prod.website-files.com/642ed84f45d235b659bd2c46/64921bb4137f1685077f2df4_TASIS%20England%201.webp"
+          alt="Smiling student raising hand in class"
+          className="rounded-lg   w-[500px] h-[500px]"
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Carcel;

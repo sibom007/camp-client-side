@@ -3,8 +3,7 @@ import { CardElement, useElements } from '@stripe/react-stripe-js'
 import { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure/useAxiosSecure';
 import useAuth from '../../../hooks/useAuth/useAuth';
-import Swal from 'sweetalert2';
-import './CheckoutFrom.css'
+import Swal from "sweetalert2";
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
