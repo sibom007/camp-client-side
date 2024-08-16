@@ -1,5 +1,19 @@
 {
   "projects": {
     "default": "assiment-12"
-  }
+  },
+  "targets": {
+    "assiment-12": {
+      "hosting": {
+        "assiment-12": [
+          "your-site-name"
+        ],
+        "your-site-name": [
+          "camp-school"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

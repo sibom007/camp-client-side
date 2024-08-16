@@ -15,7 +15,7 @@ const Navber = () => {
     Logout();
   };
 
-  const navbar = (
+  const DesktopNavbar = (
     <div className="flex gap-5 justify-center items-center text-white font-medium">
       <Link to={"/"}>Home</Link>
 
@@ -73,6 +73,65 @@ const Navber = () => {
       </div>
     </div>
   );
+
+  const MobilNavbar = (
+    <div className="flex flex-col items-center gap-5 p-4 bg-gray-800 text-white font-medium">
+      <Link to="/" className="hover:text-gray-400">
+        Home
+      </Link>
+      <Link to="/Instctor" className="hover:text-gray-400">
+        Instructors
+      </Link>
+      <Link to="/Classpage" className="hover:text-gray-400">
+        Classes
+      </Link>
+      <Link to="/dashbord/cart">
+        <button className="px-4 flex rounded-lg items-center py-3 bg-[#89b5fa] hover:bg-[#89b5fa] gap-2">
+          <FaShoppingCart className="text-white" />
+          <div className="badge bg-zinc-200 text-black">
+            +{cart?.length || 0}
+          </div>
+        </button>
+      </Link>
+      <div className="tooltip tooltip-bottom tooltip-error">
+        {user ? (
+          <div className="dropdown dropdown-end">
+            <div>
+              <img
+                className="w-10 mask mask-squircle"
+                src={user?.photoURL}
+                alt="User"
+              />
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu bg-slate-200 text-zinc-800 font-medium text-sm rounded-box z-[1] p-2 shadow-md">
+              <li>
+                <Link to="/dashbord">Dashboard</Link>
+              </li>
+              <li>
+                <Link onClick={handlerlogout}>Logout</Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <div className="flex gap-2 items-center justify-center">
+            <img
+              className="w-10 mask mask-squircle"
+              src={nologin}
+              alt="No Login"
+            />
+            <Link
+              className="px-3 py-3 hover:bg-zinc-500 duration-500 rounded-xl"
+              to="/login">
+              Login
+            </Link>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
   return (
     <div>
       <div className="navbar  bg-blue-300 rounded">
@@ -96,7 +155,7 @@ const Navber = () => {
             <ul
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-bold">
-              {navbar}
+              {MobilNavbar}
             </ul>
           </div>
 
@@ -112,7 +171,7 @@ const Navber = () => {
         </div>
 
         <div className="navbar-center hidden lg:flex lg:ml-16 xl:ml-48 2xl:ml-64">
-          <ul className="menu menu-horizontal">{navbar}</ul>
+          <ul className="menu menu-horizontal">{DesktopNavbar}</ul>
         </div>
 
         <div
